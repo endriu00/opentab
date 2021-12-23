@@ -1,0 +1,8 @@
+opentab:
+  devops:
+    - https://cloud.google.com/
+    - https://cloud.google.com/
+
+  devel:
+    test:
+      - abc
