@@ -1,6 +1,6 @@
-### OPENTAB
+# OPENTAB
 
-**Tired of having hundreds of tabs open in your browser?**
+**Tired of having hundreds of tabs open in your browser?** 
 **Tired of saying: I'll keep this tab open so that tomorrow I can study this thing better?**
 **Tired of being sad when closing them all after forgetting why you opened them lately?**
 
@@ -8,18 +8,18 @@
 
 Opentab should:
 
-# Open a group of tabs
+### Open a group of tabs
 - open a group *groupname* of tabs specified by the group name *groupname*
 
-# Be smart 
+### Be smart 
 - automatically collect a group of tabs based on a common pattern name (?????)
 
-# Add/remove tabs to/from a group
+### Add/remove tabs to/from a group
 - add a tab *URL* to a specific group *groupname*
 - remove a tab *URL* from a specific group *groupname*
 - remove an entire group specifying the group name
 
-# Group listing
+### Group listing
 - list the groups registered
 - list the groups registered with their URLs
 - list a specific group with every URL in it
@@ -67,6 +67,27 @@ options:
    IF YES: opentab removes every page the user closes and puts it into an internal recycle bin 
 
 firefox opens 10 tabs
+
+## GROUP FILE
+
+- It should be a YAML file
+  opentab:
+    devops:
+      - 
+      - 
+      - 
+    
+
+
+- Every group is a directory
+--- .opentab
+    |_______
+            | devops
+            |________
+                     | devops.txt -> URLs
+
+            | restaurants
+            | devel
 
 
 
