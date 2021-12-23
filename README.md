@@ -28,13 +28,24 @@ Opentab should:
 
 ## Usage example: 
  
-- opentab add *groupname* URL...
+- opentab add *groupname* [URL]...
+  - if no URL is provided, only a group with name *groupname* is added
+  - if one or more URLs are provided, a group *groupname* and the corresponding
+    URLs are added to the tabs.yaml file.
+
 - opentab rm *groupname* [URL]...
+  - if no URL is provided, the group is deleted along with each URL in it.
+  - if one or more URLs are provided, their are removed from the group *groupname*
+
 - opentab *groupname* --browser firefox --keep-alive
   where:
     devops is the name of the group of tabs containing a related subject
     --browser firefox is the chosen browser for opening the tabs
     --keep-alive is the flag for telling opentab to not close the tabs when the browser session is closed
+
+- opentab ls [*groupname*]
+  - if no group is provided, it shows the list of the saved groups.
+  - if the group name is provided, it shows the URL(s) in that group. 
 
 ## DEFAULT VALUES AND CONFIG FILE
 
@@ -47,7 +58,7 @@ In the config file, the user should insert:
 
 Config file structure (should be yaml):
 
-opentab:
+config:
   browser: 
   #keep-alive: 
   launch-multiple-sessions: 
