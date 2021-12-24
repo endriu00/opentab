@@ -16,5 +16,3 @@ def open_tabs(group_name, session_type, *urls):
         if not in_session:
             session_type = OPEN_IN_SAME_SESSION
             in_session = True
-
-
