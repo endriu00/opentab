@@ -1,4 +1,4 @@
-from src.write_group import OPENTAB
+from src.utility.constants import OPENTAB
 
 # remove_tabs removes the URLs specified in urls for the group group_name
 # from dic, a dictionary resulting from the tabs.yaml parsing operation.

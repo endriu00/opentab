@@ -1,8 +1,8 @@
-from get_group_urls import get_group_urls
-from is_url_correct import is_url_correct
+from src.utility.get_group_urls import get_group_urls
+from src.utility.is_url_correct import is_url_correct
 
 # Ritorna le urls corrette oppure null
-def get_right_urls(group, *urls):
+def get_right_urls(group, urls):
     # prende le urls che appartengono ad un gruppo
     dic_urls = get_group_urls(group)
     corret_url = list()

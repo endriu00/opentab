@@ -1,4 +1,4 @@
-from src.write_group import OPENTAB
+from src.utility.constants import OPENTAB
 from src.yaml.read_yaml import read_yaml
 
 # If group does not exist return FALSE.

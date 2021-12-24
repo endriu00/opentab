@@ -1,5 +1,5 @@
 from ruamel.yaml import YAML
-from src.__main__ import TABS_FILE_PATH
+from src.utility.constants import TABS_FILE_PATH
 
 # write_yaml writes a dictionary, dic, inside the tabs.yml file 
 # respecting the YAML format specification.

@@ -1,4 +1,4 @@
-from src.write_group import OPENTAB
+from src.utility.constants import OPENTAB
 
 # list_group_tabs lists the tabs inside the group group_name.
 # To accomplish the task, it takes the dictionary dic, 

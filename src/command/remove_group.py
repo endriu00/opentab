@@ -1,4 +1,4 @@
-from src.write_group import OPENTAB
+from src.utility.constants import OPENTAB
 
 # remove_group removes the group group_name along with its tabs from
 # the dictionary dic, that represents the parsed tabs.yaml file.
