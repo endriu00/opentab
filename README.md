@@ -1,6 +1,6 @@
-### OPENTAB
+# OPENTAB
 
-**Tired of having hundreds of tabs open in your browser?**
+**Tired of having hundreds of tabs open in your browser?** 
 **Tired of saying: I'll keep this tab open so that tomorrow I can study this thing better?**
 **Tired of being sad when closing them all after forgetting why you opened them lately?**
 
@@ -8,18 +8,18 @@
 
 Opentab should:
 
-# Open a group of tabs
+### Open a group of tabs
 - open a group *groupname* of tabs specified by the group name *groupname*
 
-# Be smart 
+### Be smart 
 - automatically collect a group of tabs based on a common pattern name (?????)
 
-# Add/remove tabs to/from a group
+### Add/remove tabs to/from a group
 - add a tab *URL* to a specific group *groupname*
 - remove a tab *URL* from a specific group *groupname*
 - remove an entire group specifying the group name
 
-# Group listing
+### Group listing
 - list the groups registered
 - list the groups registered with their URLs
 - list a specific group with every URL in it
@@ -28,13 +28,24 @@ Opentab should:
 
 ## Usage example: 
  
-- opentab add *groupname* URL...
+- opentab add *groupname* [URL]...
+  - if no URL is provided, only a group with name *groupname* is added
+  - if one or more URLs are provided, a group *groupname* and the corresponding
+    URLs are added to the tabs.yaml file.
+
 - opentab rm *groupname* [URL]...
+  - if no URL is provided, the group is deleted along with each URL in it.
+  - if one or more URLs are provided, their are removed from the group *groupname*
+
 - opentab *groupname* --browser firefox --keep-alive
   where:
     devops is the name of the group of tabs containing a related subject
     --browser firefox is the chosen browser for opening the tabs
     --keep-alive is the flag for telling opentab to not close the tabs when the browser session is closed
+
+- opentab ls [*groupname*]
+  - if no group is provided, it shows the list of the saved groups.
+  - if the group name is provided, it shows the URL(s) in that group. 
 
 ## DEFAULT VALUES AND CONFIG FILE
 
@@ -47,7 +58,7 @@ In the config file, the user should insert:
 
 Config file structure (should be yaml):
 
-opentab:
+config:
   browser: 
   #keep-alive: 
   launch-multiple-sessions: 
@@ -67,6 +78,27 @@ options:
    IF YES: opentab removes every page the user closes and puts it into an internal recycle bin 
 
 firefox opens 10 tabs
+
+## GROUP FILE
+
+- It should be a YAML file
+  opentab:
+    devops:
+      - 
+      - 
+      - 
+    
+
+
+- Every group is a directory
+--- .opentab
+    |_______
+            | devops
+            |________
+                     | devops.txt -> URLs
+
+            | restaurants
+            | devel
 
 
 
