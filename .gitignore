@@ -1,3 +1,3 @@
-.yml
-.xml
+*.yml
+*.xml
 __pycache__
