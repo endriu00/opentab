@@ -1,7 +1,7 @@
 from ruamel.yaml import YAML
-from opentab.yaml_utility.read_yaml import read_yaml
-from opentab.write_group import OPENTAB
-from utilityV2.get_right_urls import get_right_urls
+from src.yaml.read_yaml import read_yaml
+from src.write_group import OPENTAB
+from src.utility.get_right_urls import get_right_urls
 
 def add_tab(group, *urls):
     yaml = YAML()
