@@ -1,17 +1,16 @@
-from ruamel.yaml import YAML
-from src.yaml.read_yaml import read_yaml
+from src.__main__ import TABS_FILE_PATH
 from src.write_group import OPENTAB
 from src.utility.get_right_urls import get_right_urls
 
-def add_tab(group, *urls):
-    yaml = YAML()
-    urls_to_add = get_right_urls(group, *urls)
-    dic = read_yaml()
-    if dic[OPENTAB][group] is None:
-        dic[OPENTAB][group] = []
+# add_tab adds the URLs contained in urls to the group group_name
+# in the dictionary dic, representing the parsed tabs.yml file.
+# It returns the modified dictionary.
+def add_tab(group_name, dic, *urls):
+    urls_to_add = get_right_urls(group_name, *urls)
+    if dic[OPENTAB][group_name] is None:
+        dic[OPENTAB][group_name] = []
 
     for url in urls_to_add:
-        dic[OPENTAB][group].append(url)
+        dic[OPENTAB][group_name].append(url)
 
-    with open('result.yml', 'w') as writing_file:
-        yaml.dump(dic, writing_file)
+    return dic

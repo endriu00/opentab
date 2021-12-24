@@ -81,6 +81,16 @@ firefox opens 10 tabs
 
 ## GROUP FILE
 
+One of the most important file for both the user and `opentab` is
+`tabs.yaml` file. It stores the groups the user adds, and the URLs inside of each group.
+`tabs.yaml` can be found in the home directory under `.opentab` folder for Linux systems.
+**It is recommended to not delete it in any case, as it would compromize the whole stability of the tool.** 
+
+If the file has been mistakenly deleted, you can call:
+
+  opentab restore 
+
+
 - It should be a YAML file
   opentab:
     devops:
