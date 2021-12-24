@@ -1,8 +1,5 @@
 opentab:
   devops:
-    - https://cloud.google.com/
-    - https://cloud.google.com/
-
-  devel:
-    test:
-      - abc
+  - https://sdiofhaifh
+  - https://cloud.google.com/
+  ciao:

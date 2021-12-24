@@ -1,16 +1,10 @@
-from ruamel.yaml import YAML
-import pprint
+from command.add_tab import add_tab
+OPENTAB = 'opentab'
 
-yaml = YAML()
-# mapping is the number of spaces between two YAML keys.
-# sequence is the number of spaces between the dash and the YAML value. 
-# offset is the number of spaces between the key and the dash.
-yaml.indent(mapping=2, sequence=1, offset=2)
-with open('result.yml', 'r') as groups:
-  dic = yaml.load(groups)
 
-dic['opentab']['devops'].append('ciao')
-pprint.pprint(dic)
+def main():
 
-with open('result.yml', 'w') as writing_file:
-  yaml.dump(dic, writing_file)
+    add_tab("devops", "ciao", "ciao", "https://sdiofhaifh", "https://cloud.google.com/")
+
+if __name__ == "__main__":
+    main()
