@@ -1,12 +1,12 @@
 from src.utility.constants import OPENTAB
 from src.yaml.read_yaml import read_yaml
 
-# If group does not exist return FALSE.
-# Else if group exists return that group.
-def get_group_urls(group):
-    dic = read_yaml()
+# get_group_urls gets the URLs for a group group_name. If group does not exist 
+# it returns an empty list, otherwise it returns the URLs in that group.
+def get_group_urls(group_name, dic):
+    group_urls = []
     try:
-        dic_urls = dic[OPENTAB][group]
+        group_urls = dic[OPENTAB][group_name]
     except KeyError:
-        return False
-    return dic_urls
+        return group_urls
+    return group_urls

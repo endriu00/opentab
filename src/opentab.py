@@ -48,3 +48,5 @@ def opentab():
     if command == LS:
         if group_name == '':
             list_groups(dic)
+        else:
+            list_group_tabs(group_name, dic)
