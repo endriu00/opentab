@@ -10,5 +10,6 @@ def list_group_tabs(group_name, dic):
     if urls == []:
         print('There is no tabs for the group ' + group_name)
         return
+    print(group_name)
     for url in urls:
-        print(url)
+        print('|_______ ' + url)

@@ -31,6 +31,8 @@ def parse_cli_args():
     list_parser = subparsers.add_parser('ls')
     list_parser.add_argument('group_name', nargs='?', default='', help='Name of the '
                             + 'group to show the URLs list of.')
+    list_parser.add_argument('-a', '--all', action='store_true', help='Print every group '
+                            + 'each with the URLs in it.')
 
     # Create the open subparser with its arguments.
     # It must be passed a group name for taking the corresponding URL(s).
