@@ -33,7 +33,6 @@ def opentab():
 
     # parse arguments provided by the user
     args = parse_cli_args()
-    print(args)
 
     # store the variables in a more readable way
     command = args.subparser
@@ -49,10 +48,12 @@ def opentab():
         print(dic)
         write_yaml(dic, 'w')
     if command == RM:
-        if urls is []:
-            remove_group(group_name=group_name, dic=dic)
+        if urls == []:
+            dic = remove_group(group_name=group_name, dic=dic)
+            write_yaml(dic, 'w')
         else:
             remove_tabs(group_name=group_name, dic=dic, urls=urls)
+            write_yaml(dic, 'w')
     if command == LS:
         if group_name == '' and not args.all:
             list_groups(dic)
@@ -63,4 +64,4 @@ def opentab():
 
     if command == OPEN:
         urls_to_open = get_group_urls(group_name, dic)
-        open_tabs(group_name=group_name, session_type=1, urls=urls_to_open)
+        open_tabs(group_name=group_name, session_type=2, urls=urls_to_open)

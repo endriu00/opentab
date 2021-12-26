@@ -1,7 +1,16 @@
-from src.utility.constants import OPENTAB
+from src.utility.constants import GROUP_COLOR, LAST, OPENTAB, OPENTAB_COLOR, SPACE, TEE
 
+# list_groups prints the groups stored in opentab.
 def list_groups(dic):
-    print('Groups saved in opentab:')
-    print('opentab')
+    size = len(dic[OPENTAB])
+    i = 0
+    char = TEE
+
+    print('Groups saved in ' + OPENTAB_COLOR + 'opentab:')
+    print()
+    print(OPENTAB_COLOR + OPENTAB)
     for group in dic[OPENTAB]:
-        print('|________' + group)
+        if i == (size-1):
+            char = LAST    
+        i += 1
+        print(char + GROUP_COLOR + group)

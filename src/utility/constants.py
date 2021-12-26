@@ -8,7 +8,16 @@ TABS_FILE_PATH = HOME+'/.opentab/tabs.yml'
 # OPENTAB is the name of the first level key of the tabs.yaml file.
 OPENTAB = 'opentab'
 
+# Define opentab, group and tabs colors.
 from colorama import Fore, Style
 OPENTAB_COLOR = Style.BRIGHT + Fore.YELLOW
 GROUP_COLOR = Style.BRIGHT + Fore.CYAN
 URL_COLOR = Style.BRIGHT + Fore.GREEN
+
+# Define chars for tabs listing.
+# prefix components:
+SPACE =  '    '
+BRANCH = '│   '
+# pointers:
+TEE =    '├── '
+LAST =   '└── '
