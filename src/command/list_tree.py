@@ -2,6 +2,7 @@ from src.utility.constants import BRANCH, LAST, OPENTAB, OPENTAB_COLOR, GROUP_CO
 
 
 # TODO define generic function to print a treeish structure and call it here
+# TODO create recursive alg for generating treeish like structure
 def list_tree(dic):
     group_size = len(dic[OPENTAB])
     group_i = 0

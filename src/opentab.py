@@ -7,6 +7,7 @@ from src.command.remove_tabs import remove_tabs
 from src.command.list_group_tabs import list_group_tabs
 from src.command.list_groups import list_groups
 from src.command.open_tabs import open_tabs
+from src.utility.constants import OPENTAB, OPENTAB_DIR_PATH, TABS_FILE_PATH
 
 from src.utility.get_group_urls import get_group_urls
 
@@ -15,18 +16,29 @@ from src.yaml.write_yaml import write_yaml
 
 from colorama import init 
 
+from os import makedirs
+from os.path import exists
+
 # Command names definition.
 ADD = 'add'
 RM = 'rm'
 LS = 'ls'
 OPEN = 'open'
+CONFIG = 'config'
 
 def opentab():
 
     # TODO
     # check whether the tabs.yml file exists in the home directory.
     # Otherwise create it.
-    
+    # TODO THINK ABOUT SWITCHING TO AN INIT COMMAND
+    # for example opentab init to initialize the folders.
+    if not exists(TABS_FILE_PATH):
+        makedirs(OPENTAB_DIR_PATH)
+        open(TABS_FILE_PATH, 'x')
+        init_dic = {}
+        init_dic[OPENTAB] = {}
+        write_yaml(init_dic, 'w')
     
     # set colorama to autoreset the colors after each print
     init(autoreset=True)
@@ -45,7 +57,6 @@ def opentab():
 
     if command == ADD:
         dic = add_tab(group_name=group_name, dic=dic, urls=urls)
-        print(dic)
         write_yaml(dic, 'w')
     if command == RM:
         if urls == []:
@@ -61,7 +72,10 @@ def opentab():
             list_group_tabs(group_name, dic)
         elif group_name == '' and args.all:
             list_tree(dic)
-
     if command == OPEN:
         urls_to_open = get_group_urls(group_name, dic)
-        open_tabs(group_name=group_name, session_type=2, urls=urls_to_open)
+        if args.new_session:
+            session_type = 1
+        else:
+            session_type = 0
+        open_tabs(group_name=group_name, session_type=session_type, urls=urls_to_open)

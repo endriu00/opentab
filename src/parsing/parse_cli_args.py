@@ -39,6 +39,9 @@ def parse_cli_args():
     open_parser = subparsers.add_parser('open')
     open_parser.add_argument('group_name', help='Name of the group from which '
                             + 'the URL will be opened.')
+    open_parser.add_argument('--new-session', '-n', action='store_true', 
+                            help='Open a new browser session instead of opening the tabs'
+                            + 'in the same existing session.')
 
     # Parse the arguments.
     return parser.parse_args()

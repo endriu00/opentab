@@ -3,16 +3,21 @@
 # for the groups inserted by the user.
 from os.path import expanduser
 HOME = expanduser("~")
-TABS_FILE_PATH = HOME+'/.opentab/tabs.yml'
+OPENTAB_DIR_PATH = HOME + '/.opentab'
+TABS_FILE_PATH = OPENTAB_DIR_PATH+'/tabs.yml'
 
 # OPENTAB is the name of the first level key of the tabs.yaml file.
 OPENTAB = 'opentab'
+
+###### COLORS ######
 
 # Define opentab, group and tabs colors.
 from colorama import Fore, Style
 OPENTAB_COLOR = Style.BRIGHT + Fore.YELLOW
 GROUP_COLOR = Style.BRIGHT + Fore.CYAN
 URL_COLOR = Style.BRIGHT + Fore.GREEN
+
+###### URL LISTING CHAR ######
 
 # Define chars for tabs listing.
 # prefix components:
