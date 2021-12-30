@@ -1,4 +1,4 @@
-from src.utility.constants import GROUP_COLOR, LAST, OPENTAB, OPENTAB_COLOR, SPACE, TEE
+from src.utility.constants import GROUP_COLOR, LAST, OPENTAB, OPENTAB_COLOR, TEE
 
 # list_groups prints the groups stored in opentab.
 def list_groups(dic):

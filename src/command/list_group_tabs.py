@@ -1,4 +1,4 @@
-from src.utility.constants import GROUP_COLOR, LAST, OPENTAB, RESET_COLOR, SPACE, TEE, URL_COLOR
+from src.utility.constants import GROUP_COLOR, LAST, OPENTAB, RESET_COLOR, TEE, URL_COLOR
 from src.utility.get_group_urls import get_group_urls
 
 # list_group_tabs lists the tabs inside the group group_name.
