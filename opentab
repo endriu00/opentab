@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from src.opentab import opentab
 
 if __name__ == '__main__':

@@ -16,6 +16,9 @@ from colorama import Fore, Style
 OPENTAB_COLOR = Style.BRIGHT + Fore.YELLOW
 GROUP_COLOR = Style.BRIGHT + Fore.CYAN
 URL_COLOR = Style.BRIGHT + Fore.GREEN
+ERROR_COLOR = Style.BRIGHT + Fore.RED
+WARNING_COLOR = Style.BRIGHT + Fore.LIGHTWHITE_EX
+RESET_COLOR = Style.RESET_ALL
 
 ###### URL LISTING CHAR ######
 

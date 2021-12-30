@@ -8,6 +8,16 @@ def parse_cli_args():
     # dest parameter is necessary to know the name of the subparser invoked by CLI.
     subparsers = parser.add_subparsers(dest='subparser')
 
+    # Create the init subparser.
+    # It is intended to be a command without arguments for initializing 
+    # the .opentab folder when it is first called.
+    subparsers.add_parser('init')
+
+    # Create the reset subparser.
+    # It is intended to be a command without arguments for resetting 
+    # the .opentab folder whenever it is called.
+    subparsers.add_parser('reset')
+
     # Create the add subparser with its arguments.
     # It can be specified either a group_name with no URLs
     # or a group_name and a list of one or more URLs.

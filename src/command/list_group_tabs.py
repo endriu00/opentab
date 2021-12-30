@@ -1,4 +1,4 @@
-from src.utility.constants import GROUP_COLOR, LAST, OPENTAB, SPACE, TEE, URL_COLOR
+from src.utility.constants import GROUP_COLOR, LAST, OPENTAB, RESET_COLOR, SPACE, TEE, URL_COLOR
 from src.utility.get_group_urls import get_group_urls
 
 # list_group_tabs lists the tabs inside the group group_name.
@@ -9,7 +9,7 @@ def list_group_tabs(group_name, dic):
     i = 0
     char = TEE
 
-    print('Tabs in ' + GROUP_COLOR + group_name + ' are:')
+    print('Tabs in ' + GROUP_COLOR + group_name + RESET_COLOR+ ' are:')
     print()
     urls = get_group_urls(group_name=group_name, dic=dic)
     if urls == []:
