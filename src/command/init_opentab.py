@@ -9,6 +9,6 @@ from src.utility.constants import TABS_FILE_PATH, OPENTAB_DIR_PATH, OPENTAB
 def init_opentab():
     makedirs(OPENTAB_DIR_PATH)
     open(TABS_FILE_PATH, 'x')
-    init_dic = {}
+    init_dic = {}       
     init_dic[OPENTAB] = {}
     write_yaml(init_dic, 'w')

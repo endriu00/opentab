@@ -1,4 +1,3 @@
-# TODO HANDLE WINDOWS PATHS
 # TABS_FILE_PATH is the path of the yml file containing the tabs
 # for the groups inserted by the user.
 from os.path import expanduser
