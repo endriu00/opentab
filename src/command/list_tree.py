@@ -1,8 +1,6 @@
 from src.utility.constants import BRANCH, LAST, OPENTAB, OPENTAB_COLOR, GROUP_COLOR, SPACE, TEE, URL_COLOR
 
-
-# TODO define generic function to print a treeish structure and call it here
-# TODO create recursive alg for generating treeish like structure
+# list_tree prints the groups, along with the inner URLs, in a treeish format.
 def list_tree(dic):
     group_size = len(dic[OPENTAB])
     group_i = 0

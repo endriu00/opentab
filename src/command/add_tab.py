@@ -9,10 +9,9 @@ def add_tab(group_name, dic, urls):
     if group_name not in dic[OPENTAB]:
         dic[OPENTAB][group_name] = []
 
-    # TODO right_urls feature does not work
-    # right_urls = get_right_urls(group_name, urls, dic)
+    right_urls = get_right_urls(group_name, urls, dic)
 
-    for url in urls:
+    for url in right_urls:
         dic[OPENTAB][group_name].append(url)
 
     return dic

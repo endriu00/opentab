@@ -10,7 +10,7 @@ from src.command.list_groups import list_groups
 from src.command.open_tabs import open_tabs
 from src.command.init_opentab import init_opentab
 
-from src.utility.constants import OPENTAB, OPENTAB_DIR_PATH, TABS_FILE_PATH, ERROR_COLOR, OPENTAB_COLOR
+from src.utility.constants import TABS_FILE_PATH, ERROR_COLOR, OPENTAB_COLOR
 
 from src.utility.get_group_urls import get_group_urls
 
@@ -19,7 +19,6 @@ from src.yaml.write_yaml import write_yaml
 
 from colorama import init 
 
-from os import makedirs
 from os.path import exists
 
 # Command names definition.
@@ -40,6 +39,22 @@ def opentab():
 
     # get the command the user has provided
     command = args.subparser
+
+    # the user has issued an INIT command.
+    if command == INIT:
+        # check whether the tabs.yml file exists in the home directory.
+        # Otherwise create it. Even though the command should be issued 
+        # only when initializing the opentab workspace, it is necessary
+        # to anticipate any usage of the command itself.
+        if not exists(TABS_FILE_PATH):
+            init_opentab()
+        else:
+            print(ERROR_COLOR+'The opentab folder already exists!\n')
+            print('If you want to reset, ' 
+                + 'for any reason, the folder, run:\n')
+            print(OPENTAB_COLOR+'opentab reset\n')
+            print('However, you should be careful with it as it would lead to a'
+                ' permanent loss of your saved groups and tabs.')
 
     # read the tabs.yml file 
     dic = read_yaml()
@@ -85,22 +100,6 @@ def opentab():
         else:
             session_type = 0
         open_tabs(group_name=group_name, session_type=session_type, urls=urls_to_open)
-
-    # the user has issued an INIT command.
-    if command == INIT:
-        # check whether the tabs.yml file exists in the home directory.
-        # Otherwise create it. Even though the command should be issued 
-        # only when initializing the opentab workspace, it is necessary
-        # to anticipate any usage of the command itself.
-        if not exists(TABS_FILE_PATH):
-            init_opentab()
-        else:
-            print(ERROR_COLOR+'The opentab folder already exists!\n')
-            print('If you want to reset, ' 
-                + 'for any reason, the folder, run:\n')
-            print(OPENTAB_COLOR+'opentab reset\n')
-            print('However, you should be careful with it as it would lead to a'
-                ' permanent loss of your saved groups and tabs.')
                 
     # the user has issued a RESET command.
     if command == RESET:
