@@ -56,6 +56,17 @@ def opentab():
             print('However, you should be careful with it as it would lead to a'
                 ' permanent loss of your saved groups and tabs.')
 
+    # the user has issued a RESET command.
+    if command == RESET:
+        print('Are you sure you want to reset your tabs.yml file? [yes/n]\n')
+        print(ERROR_COLOR+'Please note that this would delete ' 
+            +'your saved groups and urls.')
+        if input().lower() == 'yes':
+            reset_opentab()
+            print('Resetting...')
+        else:
+            print('Reset procedure canceled.')
+
     # read the tabs.yml file 
     dic = read_yaml()
 
@@ -100,14 +111,3 @@ def opentab():
         else:
             session_type = 0
         open_tabs(group_name=group_name, session_type=session_type, urls=urls_to_open)
-                
-    # the user has issued a RESET command.
-    if command == RESET:
-        print('Are you sure you want to reset your tabs.yml file? [yes/n]\n')
-        print(ERROR_COLOR+'Please note that this would delete ' 
-            +'your saved groups and urls.')
-        if input().lower() == 'yes':
-            reset_opentab()
-            print('Resetting...')
-        else:
-            print('Reset procedure canceled.')

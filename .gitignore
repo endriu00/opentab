@@ -1,3 +1,4 @@
 *.yml
 *.xml
 __pycache__
+.vscode/
