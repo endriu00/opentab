@@ -5,7 +5,9 @@ from src.utility.constants import TABS_FILE_PATH
 # It returns a dictionary parsed from the file.
 def read_yaml():
     yaml = YAML()
-    with open(TABS_FILE_PATH, 'r') as groups:
-        dic = yaml.load(groups)
-
+    try:
+        with open(TABS_FILE_PATH, 'r') as groups:
+            dic = yaml.load(groups)
+    except FileNotFoundError:
+        raise FileNotFoundError
     return dic

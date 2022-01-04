@@ -1,13 +1,17 @@
 from os import makedirs
 
 from src.yaml.write_yaml import write_yaml
-from src.utility.constants import TABS_FILE_PATH, OPENTAB_DIR_PATH, OPENTAB
+from src.utility.constants import TABS_FILE_PATH, OPENTAB_DIR_PATH, OPENTAB, ERROR_COLOR
+
 
 # init_opentab inits the opentab workspace.
 # It creates the .opentab directory and initializes the tabs.yml file
 # with a first level key.
 def init_opentab():
-    makedirs(OPENTAB_DIR_PATH)
+    try:
+        makedirs(OPENTAB_DIR_PATH)
+    except FileExistsError as fileExistsError:
+        exit(ERROR_COLOR+"\nDirectory already exists, you need to opentab Reset\n")
     open(TABS_FILE_PATH, 'x')
     init_dic = {}
     init_dic[OPENTAB] = {}

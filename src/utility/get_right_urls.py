@@ -1,3 +1,4 @@
+from src.utility.constants import ERROR_COLOR
 from src.utility.get_group_urls import get_group_urls
 from src.utility.is_url_correct import is_url_correct
 
@@ -6,7 +7,10 @@ from src.utility.is_url_correct import is_url_correct
 # It returns a list of the new correct URLs.
 def get_right_urls(group, urls, dic):
     # get the group urls.
-    group_urls = get_group_urls(group, dic)
+    try:
+        group_urls = get_group_urls(group, dic)
+    except KeyError:
+        exit(ERROR_COLOR + "THE GROUP DOES NOT EXIST")
     new_urls = []
 
     for url in urls:

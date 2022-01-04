@@ -8,5 +8,5 @@ def get_group_urls(group_name, dic):
     try:
         group_urls = dic[OPENTAB][group_name]
     except KeyError:
-        return group_urls
+        raise KeyError
     return group_urls

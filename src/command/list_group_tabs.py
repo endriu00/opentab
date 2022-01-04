@@ -5,11 +5,14 @@ from src.utility.get_group_urls import get_group_urls
 # To accomplish the task, it takes the dictionary dic, 
 # that represents the parsed tabs.yml file.
 def list_group_tabs(group_name, dic):
-    size = len(dic[OPENTAB][group_name])
+    try:
+        size = len(dic[OPENTAB][group_name])
+    except KeyError:
+        raise KeyError
     i = 0
     char = TEE
 
-    print('Tabs in ' + GROUP_COLOR + group_name + RESET_COLOR+ ' are:')
+    print('Tabs in ' + GROUP_COLOR + group_name + RESET_COLOR + ' are:')
     print()
     urls = get_group_urls(group_name=group_name, dic=dic)
     if urls == []:
