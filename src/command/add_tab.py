@@ -1,6 +1,6 @@
 from src.utility.constants import OPENTAB
 from src.utility.get_right_urls import get_right_urls
-from src.Exception.GroupExists import GroupExists
+from src.exception.GroupExists import GroupExists
 
 # add_tab adds the URLs contained in urls to the group group_name
 # in the dictionary dic, representing the parsed tabs.yml file.

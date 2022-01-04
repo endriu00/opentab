@@ -1,5 +1,4 @@
 import argparse
-import argcomplete
 
 # parse_cli_args parses the CLI arguments inserted by the user.
 def parse_cli_args():
@@ -54,5 +53,4 @@ def parse_cli_args():
                                   + 'in the same existing session.')
 
     # Parse the arguments.
-    argcomplete.autocomplete(subparsers)
     return parser.parse_args()

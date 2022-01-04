@@ -1,4 +1,4 @@
-from src.Exception.GroupExists import GroupExists
+from src.exception.GroupExists import GroupExists
 from src.command.list_tree import list_tree
 from src.command.reset_opentab import reset_opentab
 from src.parsing.parse_cli_args import parse_cli_args

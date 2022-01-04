@@ -1,4 +1,3 @@
-OPENTAB_DEVEL=1
 OPENTAB_DEVEL_PATH = ~/.opentab/devel/
 TABS_FILE = tabs.yml
 OPENTAB_FILE_PATH = ${OPENTAB_DEVEL_PATH}${TABS_FILE}
@@ -18,8 +17,6 @@ devel-up:
 	
 .PHONY: devel-down
 devel-down:
-	@echo $(OPENTAB_DEVEL)
-	@export OPENTAB_DEVEL=0
 	@echo 'Destroying the devel environment...'
 	@if [ -d ${OPENTAB_DEVEL_PATH} ]; then \
 	echo 'Removing the devel folder.'; \

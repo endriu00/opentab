@@ -1,6 +1,5 @@
 from src.utility.constants import OPENTAB, ERROR_COLOR
 
-
 # remove_tabs removes the URLs specified in urls for the group group_name
 # from dic, a dictionary resulting from the tabs.yaml parsing operation.
 # It returns the modified dictionary.

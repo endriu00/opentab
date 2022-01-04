@@ -3,7 +3,6 @@ from os import makedirs
 from src.yaml.write_yaml import write_yaml
 from src.utility.constants import TABS_FILE_PATH, OPENTAB_DIR_PATH, OPENTAB, ERROR_COLOR
 
-
 # init_opentab inits the opentab workspace.
 # It creates the .opentab directory and initializes the tabs.yml file
 # with a first level key.
