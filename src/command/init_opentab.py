@@ -13,6 +13,6 @@ def init_opentab():
     except FileExistsError as fileExistsError:
         exit(ERROR_COLOR+"\nDirectory already exists, you need to opentab Reset\n")
     open(TABS_FILE_PATH, 'x')
-    init_dic = {}
+    init_dic = {}       
     init_dic[OPENTAB] = {}
     write_yaml(init_dic, 'w')

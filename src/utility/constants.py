@@ -1,10 +1,15 @@
-# TODO HANDLE WINDOWS PATHS
 # TABS_FILE_PATH is the path of the yml file containing the tabs
 # for the groups inserted by the user.
 from os.path import expanduser
+from os import getenv as getenv
 HOME = expanduser("~")
 OPENTAB_DIR_PATH = HOME + '/.opentab'
-TABS_FILE_PATH = OPENTAB_DIR_PATH+'/tabs.yml'
+print(getenv('OPENTAB_DEVEL'))
+if getenv('OPENTAB_DEVEL') == "0":
+    TABS_FILE_PATH = OPENTAB_DIR_PATH+'/tabs.yml' 
+else: 
+    print('asdasdasdasd')
+    TABS_FILE_PATH = OPENTAB_DIR_PATH+'/devel/tabs.yml' 
 
 # OPENTAB is the name of the first level key of the tabs.yaml file.
 OPENTAB = 'opentab'

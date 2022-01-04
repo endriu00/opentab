@@ -61,8 +61,8 @@ def opentab():
     # the user has issued a RESET command.
     if command == RESET:
         print('Are you sure you want to reset your tabs.yml file? [yes/n]\n')
-        print(ERROR_COLOR + 'Please note that this would delete '
-              + 'your saved groups and urls.')
+        print(ERROR_COLOR+'Please note that this would delete ' 
+            +'your saved groups and urls.')
         if input().lower() == 'yes':
             reset_opentab()
             print('Resetting...')
@@ -74,6 +74,7 @@ def opentab():
         dic = read_yaml()
     except FileNotFoundError:
         exit(ERROR_COLOR + "File not found!!\nYou need to opentab reset")
+        
     # the user has issued an ADD command.
     if command == ADD:
         group_name = args.group_name
@@ -132,4 +133,5 @@ def opentab():
             session_type = 1
         else:
             session_type = 0
+
         open_tabs(group_name=group_name, session_type=session_type, urls=urls_to_open)
