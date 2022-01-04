@@ -8,7 +8,6 @@ print(getenv('OPENTAB_DEVEL'))
 if getenv('OPENTAB_DEVEL') == "0":
     TABS_FILE_PATH = OPENTAB_DIR_PATH+'/tabs.yml' 
 else: 
-    print('asdasdasdasd')
     TABS_FILE_PATH = OPENTAB_DIR_PATH+'/devel/tabs.yml' 
 
 # OPENTAB is the name of the first level key of the tabs.yaml file.
