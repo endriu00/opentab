@@ -1,2 +1,0 @@
-class GroupExists(Exception):
-    pass
