@@ -1,3 +1,6 @@
 *.yml
 *.xml
 __pycache__
+.vscode/
+dist/
+opentab.egg-info/
