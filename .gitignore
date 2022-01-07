@@ -4,3 +4,4 @@ __pycache__
 .vscode/
 dist/
 opentab.egg-info/
+setup.cfg
