@@ -4,7 +4,7 @@
 **Tired of saying: I'll keep this tab open so that tomorrow I can study this thing better?**
 **Tired of being sad when closing them all after forgetting why you opened them lately?**
 
-##  Then Opentab is the bash utility made for you!
+## Then Opentab is the bash utility made for you!
 
 Opentab should:
 
