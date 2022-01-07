@@ -41,6 +41,13 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install build
+        pip install jinja2-cli
+
+    - name: Generate the setup.cfg with new version
+      run: |
+        echo 'version: $VERSION' >> version.yaml
+        jinja2 setup.cfg.j2 version.yaml >> setup.cfg
+        rm setup.cfg.j2 version.yaml
 
     - name: Build package
       run: python -m build
