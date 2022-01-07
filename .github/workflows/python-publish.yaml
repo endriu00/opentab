@@ -40,11 +40,56 @@ jobs:
         python -m pip install --upgrade pip
         pip install build
         pip install jinja2-cli
+        pip install opentab
+        pip install pyyaml==5.4
+        pip install jinja2-cli[yaml]
+
+    - name: Take new version
+      run: |
+        VERSION=$(pip list | grep "opentab" | tr "opentab " " ")
+        IFS="." read -r -a version_digits <<<"$VERSION"
+        commit_message=$(git log --reverse -n 1 --pretty="%f")
+
+        if [[ "$commit_message" == "Stable"* ]];
+        then
+            first_digit=${version_digits[0]}
+            version_digits[1]=0
+            version_digits[2]=0
+            first_digit=$(expr $first_digit + "1")
+            while [ $? -eq 2 ]
+            do
+                first_digit=$(expr $first_digit + "1")
+            done
+            version_digits[0]=$first_digit
+        fi
+
+        if [[ "$commit_message" == "Major"* ]];
+        then
+            second_digit=${version_digits[1]}
+            version_digits[2]=0
+            second_digit=$(expr $second_digit + "1")
+            version_digits[1]=$second_digit
+        fi
+
+        if [[ "$commit_message" == "Minor"* ]];
+        then
+            third_digit=${version_digits[2]}
+            third_digit=$(expr $third_digit + "1")
+            version_digits[2]=$third_digit
+        fi
+
+        echo "VERSION=$(echo ${version_digits[*]} | tr " " ".")" >> $GITHUB_ENV
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install build
+        pip install jinja2-cli
 
     - name: Generate the setup.cfg with new version
       run: |
-        echo 'version: $VERSION' >> version.yaml
-        jinja2 setup.cfg.j2 version.yaml >> setup.cfg
+        echo 'version:' $VERSION >> version.yaml
+        jinja2 setup.cfg.j2 version.yaml --format=yaml >> setup.cfg
         rm setup.cfg.j2 version.yaml
 
     - name: Build package
