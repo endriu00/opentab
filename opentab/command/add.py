@@ -2,6 +2,10 @@ from opentab.utility.constants import OPENTAB
 from opentab.utility.get_right_urls import get_right_urls
 from opentab.exception.GroupExists import GroupExists
 
+##############################
+#           add_tab          #
+##############################
+
 # add_tab adds the URLs contained in urls to the group group_name
 # in the dictionary dic, representing the parsed tabs.yml file.
 # It returns the modified dictionary.

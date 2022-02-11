@@ -8,7 +8,7 @@ from opentab.command.open import open_tabs
 from opentab.command.start import init_opentab, reset_opentab
 from opentab.command.list import list_tree, list_group_tabs, list_groups
 
-from opentab.utility.constants import TABS_FILE_PATH, ERROR_COLOR, OPENTAB_COLOR, OPENTAB
+from opentab.utility.constants import TABS_FILE_PATH, ERROR_COLOR, OPENTAB_COLOR
 
 from opentab.utility.get_group_urls import get_group_urls
 

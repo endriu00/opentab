@@ -1,11 +1,11 @@
-##############################
-#        init_opentab        #
-##############################
-
 from os import makedirs
 
 from opentab.yaml.write_yaml import write_yaml
 from opentab.utility.constants import TABS_FILE_PATH, OPENTAB_DIR_PATH, OPENTAB, ERROR_COLOR
+
+##############################
+#        init_opentab        #
+##############################
 
 # init_opentab inits the opentab workspace.
 # It creates the .opentab directory and initializes the tabs.yml file

@@ -4,6 +4,10 @@ from opentab.utility.constants import GROUP_COLOR, URL_COLOR
 
 OPEN_IN_SAME_SESSION = 2
 
+##############################
+#         open_tabs          #
+##############################
+
 # open_tabs opens a group of tabs taken from group_name.
 # If session_type is 0, the tabs are opened in any existing browser session. 
 # If session_type is 1, a new browser session is opened. 

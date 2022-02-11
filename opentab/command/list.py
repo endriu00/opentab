@@ -1,8 +1,9 @@
+from opentab.utility.constants import GROUP_COLOR, LAST, OPENTAB, OPENTAB_COLOR, TEE, RESET_COLOR, URL_COLOR, BRANCH, SPACE
+from opentab.utility.get_group_urls import get_group_urls
+
 ##############################
 #         list_groups        #
 ##############################
-
-from opentab.utility.constants import GROUP_COLOR, LAST, OPENTAB, OPENTAB_COLOR, TEE
 
 # list_groups prints the groups stored in opentab.
 def list_groups(dic):
@@ -23,9 +24,6 @@ def list_groups(dic):
 ##############################
 #      list_group_tabs       #
 ##############################
-
-from opentab.utility.constants import RESET_COLOR, URL_COLOR
-from opentab.utility.get_group_urls import get_group_urls
 
 # list_group_tabs lists the tabs inside the group group_name.
 # To accomplish the task, it takes the dictionary dic, 
@@ -55,8 +53,6 @@ def list_group_tabs(group_name, dic):
 ##############################
 #          list_tree         #
 ##############################
-
-from opentab.utility.constants import BRANCH, SPACE
 
 # list_tree prints the groups, along with the inner URLs, in a treeish format.
 def list_tree(dic):
