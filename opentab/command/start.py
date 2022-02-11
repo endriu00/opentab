@@ -1,3 +1,7 @@
+##############################
+#        init_opentab        #
+##############################
+
 from os import makedirs
 
 from opentab.yaml.write_yaml import write_yaml
@@ -13,5 +17,20 @@ def init_opentab():
         exit(ERROR_COLOR+"\nDirectory already exists, you need to opentab Reset\n")
     open(TABS_FILE_PATH, 'x')
     init_dic = {}       
+    init_dic[OPENTAB] = {}
+    write_yaml(init_dic, 'w')
+
+
+##############################
+#       reset_opentab        #
+##############################
+
+# reset_opentab resets the .opentab directory.
+def reset_opentab():
+    try:
+        open(TABS_FILE_PATH, 'w')
+    except:
+        init_opentab()
+    init_dic = {}
     init_dic[OPENTAB] = {}
     write_yaml(init_dic, 'w')
