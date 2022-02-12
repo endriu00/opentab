@@ -1,17 +1,14 @@
 from opentab.exception.GroupExists import GroupExists
-from opentab.command.list_tree import list_tree
-from opentab.command.reset_opentab import reset_opentab
+
 from opentab.parsing.parse_cli_args import parse_cli_args
 
-from opentab.command.add_tab import add_tab
-from opentab.command.remove_group import remove_group
-from opentab.command.remove_tabs import remove_tabs
-from opentab.command.list_group_tabs import list_group_tabs
-from opentab.command.list_groups import list_groups
-from opentab.command.open_tabs import open_tabs
-from opentab.command.init_opentab import init_opentab
+from opentab.command.add import add_tab
+from opentab.command.remove import remove_group, remove_tabs
+from opentab.command.open import open_tabs
+from opentab.command.start import init_opentab, reset_opentab
+from opentab.command.list import list_tree, list_group_tabs, list_groups
 
-from opentab.utility.constants import TABS_FILE_PATH, ERROR_COLOR, OPENTAB_COLOR, OPENTAB
+from opentab.utility.constants import TABS_FILE_PATH, ERROR_COLOR, OPENTAB_COLOR
 
 from opentab.utility.get_group_urls import get_group_urls
 

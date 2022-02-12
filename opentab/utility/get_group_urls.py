@@ -1,5 +1,4 @@
 from opentab.utility.constants import OPENTAB
-from opentab.yaml.read_yaml import read_yaml
 
 # get_group_urls gets the URLs for a group group_name. If group does not exist 
 # it returns an empty list, otherwise it returns the URLs in that group.

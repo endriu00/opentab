@@ -2,7 +2,7 @@ OPENTAB_DEVEL_PATH = ~/.opentab/devel/
 TABS_FILE = tabs.yml
 OPENTAB_FILE_PATH = ${OPENTAB_DEVEL_PATH}${TABS_FILE}
 PYTHON_PATH = /usr/bin/env python
-OPENTAB_MAIN_PATH = src/devel/init_devel.py
+OPENTAB_MAIN_PATH = opentab/devel/init_devel.py
 
 .PHONY: devel-up
 devel-up:
