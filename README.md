@@ -1,13 +1,27 @@
 # Meet `opentab`
 
-Tired of having hundreds of tabs open in your browser?
-Tired of saying: I'll keep this tab open so that tomorrow I can study this thing better? 
-Tired of being sad when closing them all after forgetting why you opened them lately?
+Tired of having hundreds of tabs open in your browser?  
+Tired of saying: I'll keep this tab open so that tomorrow I can study this thing better?  
+Tired of being sad when closing them all after forgetting why you opened them lately?  
 
 ### Then `opentab` is the bash utility made for you!
 
 `opentab` is a CLI tool that lets you save your browser tabs in a structured way 
 so that you can relax and read or work on them later. 
+
+# Index
+
+- [Why opentab](#why-opentab)
+- [Features](#features)
+  - [Add tabs](#add-tabs)
+  - [Remove tabs](#remove-tabs)
+  - [Open tabs](#open-tabs)
+  - [List tabs](#list-tabs)
+  - [Init opentab](#init-opentab)
+  - [Reset opentab](#reset-opentab)
+
+
+# Why `opentab`
 
 Think of it like a tab organizer: most of the time, you need to open again 
 and again the same group of tabs, like your job's email webpage, your company's 
@@ -56,7 +70,7 @@ do not worry about them anymore!
 
 The available commands are:  
 - Remove one group **and** the tabs in it.  
-  **Danger**: this will delete the tabs in the group along with it.  
+  :warning: **Danger**: this will delete the tabs in the group along with it. :warning:  
   The command is:  
   :heavy_check_mark: opentab rm never_coming_back_group
 
@@ -69,7 +83,7 @@ The available commands are:
   :heavy_check_mark: opentab rm still_existing_group deleting_url_1 [...] deleting_url_n 
 
 
-## Open a group of tabs
+## Open tabs
 
 Now you have a good amount of groups and tabs. Let's see what `opentab` is 
 capable of! Open a group of tabs specified by the group name.  
@@ -86,7 +100,7 @@ The available commands are:
   :heavy_check_mark: opentab open -n cool_group_name
   
 
-## List the tabs
+## List tabs
 
 You have added so many tabs to `opentab` that you have lost the number. 
 Or the name of your groups. No problem, `opentab` is here to help you.
@@ -105,6 +119,32 @@ The available commands are:
 - List the tabs in each group along with the groups.  
   The command is:  
   :heavy_check_mark: opentab ls -a
+
+
+## Init `opentab`
+
+Like most known tools, `opentab` needs to be initialized. It is not that hard
+though. It is just a matter of a command. This is the very first thing you 
+should do after installing `opentab`, if you do not want to get a really
+unfriendly error message.
+
+The available command is:  
+- Initialize the workspace.  
+  The command is:  
+  :heavy_check_mark: opentab init
+
+
+## Reset `opentab`
+
+You have probably messed around with `opentab` and its `tabs.yaml` file  if you
+need to read this. No worries! While you could have lost your saved tabs, you 
+can still get back to a fully working environment with a single command.
+
+The available command is:  
+- Reset the workspace.  
+  :warning: **Danger**: this will delete **every** group and tabs in it. :warning:  
+  The command is:  
+  :heavy_check_mark: opentab reset
 
 
 ## Usage example: 
