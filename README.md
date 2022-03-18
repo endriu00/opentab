@@ -48,7 +48,7 @@ The available commands are:
   :heavy_check_mark: opentab add cool_group_name first_url second_url [...] nth_url
 
 
-# Remove tabs
+## Remove tabs
 
 What if your job on some tabs or some group of tabs is done? You don't want 
 them to ruin your clean `opentab` workspace. You can simply delete them and
@@ -69,7 +69,7 @@ The available commands are:
   :heavy_check_mark: opentab rm still_existing_group deleting_url_1 [...] deleting_url_n 
 
 
-# Open a group of tabs
+## Open a group of tabs
 
 Now you have a good amount of groups and tabs. Let's see what `opentab` is 
 capable of! Open a group of tabs specified by the group name.  
@@ -86,7 +86,7 @@ The available commands are:
   :heavy_check_mark: opentab open -n cool_group_name
   
 
-# List the tabs
+## List the tabs
 
 You have added so many tabs to `opentab` that you have lost the number. 
 Or the name of your groups. No problem, `opentab` is here to help you.
