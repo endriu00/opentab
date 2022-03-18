@@ -38,9 +38,11 @@ The available commands are:
 - Add one empty group.
   The command is:
   [x] opentab add cool_group_name
+  
 - Add one *URL* to a specific group.
   The command is:
   [x] opentab add cool_group_name single_url
+
 - Add more than one *URL* to a specific group.
   The command is:
   [x] opentab add cool_group_name first_url second_url [...] nth_url
@@ -57,9 +59,11 @@ The available commands are:
   **Danger**: this will delete the tabs in the group along with it.
   The command is:
   [x] opentab rm never_coming_back_group
+
 - Remove one URL from a group.
   The command is:
   [x] opentab rm still_existing_group deleting_url
+
 - Remove more than one URL from a group.
   The command is:
   [x] opentab rm still_existing_group deleting_url_1 [...] deleting_url_n 
@@ -75,6 +79,7 @@ The available commands are:
 - Open the tabs in the group in an existing browser session.
   The command is:
   [x] opentab open cool_group_name
+
 - Open the tabs in the group in a new browser session.
   The commands are:
   [x] opentab open --new-session cool_group_name
@@ -94,9 +99,11 @@ The available commands are:
 - List the groups you have saved.
   The command is:
   [x] opentab ls 
+
 - List the tabs in a group.
   The command is:
   [x] opentab ls cool_group_name
+
 - List the tabs in each group along with the groups.
   The command is:
   [x] opentab ls -a
