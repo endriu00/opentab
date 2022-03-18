@@ -1,8 +1,12 @@
+[![Upload Python Package](https://github.com/endriu00/opentab/actions/workflows/python-publish.yaml/badge.svg)](https://github.com/endriu00/opentab/actions/workflows/python-publish.yaml)
+
 # Meet `opentab`
 
-Tired of having hundreds of tabs open in your browser?  
-Tired of saying: I'll keep this tab open so that tomorrow I can study this thing better?  
-Tired of being sad when closing them all after forgetting why you opened them lately?  
+- :cold_sweat: Tired of having hundreds of tabs open in your browser?  
+- :rage: Tired of saying: I'll keep this tab open so that tomorrow I can study 
+  this thing better?  
+- :tired_face: Tired of being sad when closing them all after forgetting why 
+  you opened them lately?  
 
 ### Then `opentab` is the bash utility made for you!
 
