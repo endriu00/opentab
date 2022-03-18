@@ -34,17 +34,17 @@ using your shell only. These are just some of the features of `opentab`!
 The `add` command is the command you will probably use the most along with
 the `open` command (check it out at [open](#open-a-group-of-tabs)).
 
-The available commands are:
-- Add one empty group.
-  The command is:
+The available commands are:  
+- Add one empty group.  
+  The command is:  
   :heavy_check_mark: opentab add cool_group_name
 
-- Add one *URL* to a specific group.
-  The command is:
+- Add one *URL* to a specific group.  
+  The command is:  
   :heavy_check_mark: opentab add cool_group_name single_url
 
-- Add more than one *URL* to a specific group.
-  The command is:
+- Add more than one *URL* to a specific group.  
+  The command is:  
   :heavy_check_mark: opentab add cool_group_name first_url second_url [...] nth_url
 
 
@@ -52,37 +52,37 @@ The available commands are:
 
 What if your job on some tabs or some group of tabs is done? You don't want 
 them to ruin your clean `opentab` workspace. You can simply delete them and
-do not worry about them anymore!
+do not worry about them anymore!  
 
-The available commands are:
-- Remove one group **and** the tabs in it.
-  **Danger**: this will delete the tabs in the group along with it.
-  The command is:
+The available commands are:  
+- Remove one group **and** the tabs in it.  
+  **Danger**: this will delete the tabs in the group along with it.  
+  The command is:  
   :heavy_check_mark: opentab rm never_coming_back_group
 
-- Remove one URL from a group.
-  The command is:
+- Remove one URL from a group.  
+  The command is:  
   :heavy_check_mark: opentab rm still_existing_group deleting_url
 
-- Remove more than one URL from a group.
-  The command is:
+- Remove more than one URL from a group.  
+  The command is:  
   :heavy_check_mark: opentab rm still_existing_group deleting_url_1 [...] deleting_url_n 
 
 
 # Open a group of tabs
 
 Now you have a good amount of groups and tabs. Let's see what `opentab` is 
-capable of! Open a group of tabs specified by the group name.
-The tabs will be opened in your default browser.
+capable of! Open a group of tabs specified by the group name.  
+The tabs will be opened in your default browser.  
 
-The available commands are:
-- Open the tabs in the group in an existing browser session.
-  The command is:
+The available commands are:  
+- Open the tabs in the group in an existing browser session.  
+  The command is:  
   :heavy_check_mark: opentab open cool_group_name
 
-- Open the tabs in the group in a new browser session.
-  The commands are:
-  :heavy_check_mark: opentab open --new-session cool_group_name
+- Open the tabs in the group in a new browser session.  
+  The commands are:  
+  :heavy_check_mark: opentab open --new-session cool_group_name  
   :heavy_check_mark: opentab open -n cool_group_name
   
 
@@ -96,18 +96,15 @@ You can list:
 - The tabs in every group.
 
 The available commands are:
-- List the groups you have saved.
-  The command is:
+- List the groups you have saved.  
+  The command is:  
   :heavy_check_mark: opentab ls 
-
-- List the tabs in a group.
-  The command is:
+- List the tabs in a group.  
+  The command is:  
   :heavy_check_mark: opentab ls cool_group_name
-
-- List the tabs in each group along with the groups.
-  The command is:
+- List the tabs in each group along with the groups.  
+  The command is:  
   :heavy_check_mark: opentab ls -a
-
 
 
 ## Usage example: 
