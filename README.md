@@ -9,6 +9,8 @@ Tired of being sad when closing them all after forgetting why you opened them la
 `opentab` is a CLI tool that lets you save your browser tabs in a structured way 
 so that you can relax and read or work on them later. 
 
+###### INSERT VIDEO HERE ########
+
 # Index
 
 - [Why opentab](#why-opentab)
@@ -19,6 +21,10 @@ so that you can relax and read or work on them later.
   - [List tabs](#list-tabs)
   - [Init opentab](#init-opentab)
   - [Reset opentab](#reset-opentab)
+- [Low-Level Details](#low-level-details)
+  - [tabs.yaml](#tabsyaml)
+- [Contribute](#contribute)
+  - [Devel Environment](#devel-environment)
 
 
 # Why `opentab`
@@ -147,70 +153,67 @@ The available command is:
   :heavy_check_mark: opentab reset
 
 
-## Usage example: 
- 
-- opentab add *groupname* [URL]...
-  - if no URL is provided, only a group with name *groupname* is added
-  - if one or more URLs are provided, a group *groupname* and the corresponding
-    URLs are added to the tabs.yaml file.
+# Low-Level Details
 
-- opentab rm *groupname* [URL]...
-  - if no URL is provided, the group is deleted along with each URL in it.
-  - if one or more URLs are provided, their are removed from the group *groupname*
+`opentab` does well its job. Let's see how it works.
 
-- opentab *groupname* --browser firefox --keep-alive
-  where:
-    devops is the name of the group of tabs containing a related subject
-    --browser firefox is the chosen browser for opening the tabs
-    --keep-alive is the flag for telling opentab to not close the tabs when the browser session is closed
+## tabs.yaml 
 
-- opentab ls [*groupname*]
-  - if no group is provided, it shows the list of the saved groups.
-  - if the group name is provided, it shows the URL(s) in that group. 
-
-## DEFAULT VALUES AND CONFIG FILE
-
-A config file should be created. 
-In the config file, the user should insert:
-- the preferred browser
-- the preferred way to handle multiple calls to opentab:
-  open multiple sessions of the same browser or open every new tab in the same session?
+One of the most important file for both the user and `opentab` is the `tabs.yaml`
+file. It stores the groups the user adds, and the URLs inside of each group.
+`tabs.yaml` can be found in the home directory under `.opentab` folder for Linux
+systems. **It is recommended to not delete it in any case, as it would compromise** 
+**the whole stability of the tool**. 
 
 
-Config file structure (should be yaml):
+# Contribute
 
-config:
-  browser: 
-  #keep-alive: 
-  launch-multiple-sessions: 
+You really like `opentab` but you see something that is not working or you want
+to add some cool features? You could do two things:
+- Submit an issue.
+- Submit an issue, open a pull request, work on the changes.
 
+We prefer you to do the second, as it would be a great opportunity to dirt your
+own hands and contribute to an open source project, but we appreciate the first
+option too, as it sounds like someone is enjoying `opentab` and he finds it 
+useful, or at least pretty. 
+Below there are a few headlines to let you get started in case you want to 
+contribute the hard way.
 
-## USE CASE
+## Devel Environment
 
-devops has 10 tabs
-
-opentab devops 
-
-options:
-1. opentab removes entirely devops group from its DB
-2. user has to remove manually the URLs
-3. if user provides the -k/--keep-alive flag, opentab does not remove anything from the group
-4. CHECK IF THERE EXIST A WAY TO DETERMINE THE TABS USER CLOSES. 
-   IF YES: opentab removes every page the user closes and puts it into an internal recycle bin 
-
-firefox opens 10 tabs
-
-## GROUP FILE
-
-One of the most important file for both the user and `opentab` is
-`tabs.yaml` file. It stores the groups the user adds, and the URLs inside of each group.
-`tabs.yaml` can be found in the home directory under `.opentab` folder for Linux systems.
-**It is recommended to not delete it in any case, as it would compromize the whole stability of the tool.** 
-
-
-
-
-
-## REFERENCES
-
-open browser sessions: https://docs.python.org/3/library/webbrowser.html
+What if you have collected hundreds of tabs in several groups, you start working
+on `opentab` to add new features or to fix existing ones, and suddenly your 
+`tabs.yaml` file gets corrupted?  
+This is too bad.  
+And this happened to us.  
+This is why we have developed a "development environment" for `opentab`. This 
+is how it works:
+- There is a `Makefile` in the root of the repo.
+- You can simply head to the root of the repo and type:
+  ```
+  make devel-up
+  ```
+  This way, it will setup a devel environment where you can do whatever you 
+  want to the workspace. You can even destroy it! Your precious `tabs.yaml`
+  original file will **not** be touched.  
+  You may wonder how it works. It is really simple: what the command does is:
+  - It will check for the existence of a directory: `~/.opentab/devel`.
+  - If the directory exists:
+    - Devel environment is up.
+  - Else:
+    - Create the directory.
+    - Initialize a `tabs.yaml` devel file.  
+  Now, every time you will launch an opentab command, it will refer to that 
+  `tabs.yaml` file instead of the original one. This is done by dynamically 
+  locating the `tabs.yaml` file when calling `opentab`:  
+  it will check whether the `~/.opentab/devel` directory exists. If it exists,
+  the variable that is used to determine the `tabs.yaml` location refers to 
+  that file.
+- When you are done developing, remember to switch back to the normal file.
+  You can do this by simply going to the root of the repo and type:
+  ```
+  make devel-down
+  ```
+  This will switch your `opentab` configuration back to the original `tabs.yaml`
+  file.
