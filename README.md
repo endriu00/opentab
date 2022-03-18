@@ -37,15 +37,15 @@ the `open` command (check it out at [open](#open-a-group-of-tabs)).
 The available commands are:
 - Add one empty group.
   The command is:
-  [x] opentab add cool_group_name
-  
+  :heavy_check_mark: opentab add cool_group_name
+
 - Add one *URL* to a specific group.
   The command is:
-  [x] opentab add cool_group_name single_url
+  :heavy_check_mark: opentab add cool_group_name single_url
 
 - Add more than one *URL* to a specific group.
   The command is:
-  [x] opentab add cool_group_name first_url second_url [...] nth_url
+  :heavy_check_mark: opentab add cool_group_name first_url second_url [...] nth_url
 
 
 # Remove tabs
@@ -58,15 +58,15 @@ The available commands are:
 - Remove one group **and** the tabs in it.
   **Danger**: this will delete the tabs in the group along with it.
   The command is:
-  [x] opentab rm never_coming_back_group
+  :heavy_check_mark: opentab rm never_coming_back_group
 
 - Remove one URL from a group.
   The command is:
-  [x] opentab rm still_existing_group deleting_url
+  :heavy_check_mark: opentab rm still_existing_group deleting_url
 
 - Remove more than one URL from a group.
   The command is:
-  [x] opentab rm still_existing_group deleting_url_1 [...] deleting_url_n 
+  :heavy_check_mark: opentab rm still_existing_group deleting_url_1 [...] deleting_url_n 
 
 
 # Open a group of tabs
@@ -78,12 +78,12 @@ The tabs will be opened in your default browser.
 The available commands are:
 - Open the tabs in the group in an existing browser session.
   The command is:
-  [x] opentab open cool_group_name
+  :heavy_check_mark: opentab open cool_group_name
 
 - Open the tabs in the group in a new browser session.
   The commands are:
-  [x] opentab open --new-session cool_group_name
-  [x] opentab open -n cool_group_name
+  :heavy_check_mark: opentab open --new-session cool_group_name
+  :heavy_check_mark: opentab open -n cool_group_name
   
 
 # List the tabs
@@ -98,15 +98,15 @@ You can list:
 The available commands are:
 - List the groups you have saved.
   The command is:
-  [x] opentab ls 
+  :heavy_check_mark: opentab ls 
 
 - List the tabs in a group.
   The command is:
-  [x] opentab ls cool_group_name
+  :heavy_check_mark: opentab ls cool_group_name
 
 - List the tabs in each group along with the groups.
   The command is:
-  [x] opentab ls -a
+  :heavy_check_mark: opentab ls -a
 
 
 
