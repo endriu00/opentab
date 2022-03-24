@@ -17,6 +17,11 @@ so that you can relax and read or work on them later.
 
 # Index
 
+- [Getting Started](#getting-started-the-fast-way)
+  - [Installation](#installation)
+  - [Initialize opentab](#initialize-opentab)
+  - [Add a test group](#add-a-group-with-some-urls)
+  - [Open the test group](#open-a-group-of-tabs)
 - [Why opentab](#why-opentab)
 - [Features](#features)
   - [Add tabs](#add-tabs)
@@ -29,6 +34,90 @@ so that you can relax and read or work on them later.
   - [tabs.yaml](#tabsyaml)
 - [Contribute](#contribute)
   - [Devel Environment](#devel-environment)
+
+
+# Getting started (The fast way)
+
+`opentab` lets you save browser tabs in groups that you can easily open them
+later. The only thing you need is your CLI!
+
+## Installation
+
+`opentab` can be easily installed using `pip`. Simply issue this command:
+```
+pip install opentab
+```
+And you are done! `opentab` is installed in your system.
+
+> Please note that `opentab` is written in `Python`, and it downloads some
+> depencencies with it. We do not suggest you to use a virtual environment for
+> using `opentab`. Instead, consider using a virtual environment for your other
+> projects if you don't do it.
+
+## Initialize opentab
+
+To initialize `opentab`, simply use this command:
+```
+opentab init
+```
+This initializes `opentab`'s workspace.
+After this step, `opentab` is ready to be used. The following content is for 
+explanatory purpose only. For a full list of available commands, refer to
+[commands](#features).
+
+## Add a group with some URLs
+
+This operation is incredibly easy.
+```
+opentab add test_group "https://github.com/endriu00/opentab" "https://github.com/endriu00/opentab/issues"
+```
+
+## Open a group of tabs
+
+# Why `opentab`
+
+Think of it like a tab organizer: most of the time, you need to open again 
+and again the same group of tabs, like your job's email webpage, your company's 
+internal websites you have to login into everyday, your job's `Slack` account. 
+Sometimes, you are working on something and you start opening pages over pages 
+in your browser. This leads to tens or more tabs per argument that you are not 
+willing to close. The automatic instinct you have is to bookmark them all and 
+put them inside a folder in your browser. Now the fact is: you could use any 
+add-on your browser is provided of, but you will soon lose track of the tabs you
+saved. And, worst, you need to search for them everytime and this is so unfriendly.
+Moreover, if you decide to change your default browser, you would need to export 
+them all in some ways. `opentab` resolves all these issues, and it does letting 
+you organize your tabs in **groups** that you can directly consult in your shell.
+
+Exactly, if you are a shell lover, you can *save* all your tabs and *open* them
+using your shell only. These are just some of the features of `opentab`!
+
+
+# Features
+
+## Add tabs
+
+`opentab` is useless if you cannot populate it with your favourite tabs!
+The `add` command is the command you will probably use the most along with
+the `open` command (check it out at [open](#open-a-group-of-tabs)).
+
+The available commands are:  
+- Add one empty group.  
+  The command is:  
+  :heavy_check_mark: opentab add cool_group_name
+
+- Add one *URL* to a specific group.  
+  The command is:  
+  :heavy_check_mark: opentab add cool_group_name single_url
+
+- Add more than one *URL* to a specific group.  
+  The command is:  
+  :heavy_check_mark: opentab add cool_group_name first_url second_url [...] nth_url
+
+```
+opentab open test_group
+```
+`opentab` will open the URLs in your default browser. Simple, isn't it?
 
 
 # Why `opentab`
@@ -71,6 +160,35 @@ The available commands are:
   The command is:  
   :heavy_check_mark: opentab add cool_group_name first_url second_url [...] nth_url
 
+
+## Remove tabs
+
+What if your job on some tabs or some group of tabs is done? You don't want 
+them to ruin your clean `opentab` workspace. You can simply delete them and
+do not worry about them anymore!  
+
+The available commands are:  
+- Remove one group **and** the tabs in it.  
+  :warning: **Danger**: this will delete the tabs in the group along with it. :warning:  
+  The command is:  
+  :heavy_check_mark: opentab rm never_coming_back_group
+
+- Remove one URL from a group.  
+  The command is:  
+  :heavy_check_mark: opentab rm still_existing_group deleting_url
+
+- Remove more than one URL from a group.  
+  The command is:  
+  :heavy_check_mark: opentab rm still_existing_group deleting_url_1 [...] deleting_url_n 
+
+
+## Open tabs
+
+Now you have a good amount of groups and tabs. Let's see what `opentab` is 
+capable of! Open a group of tabs specified by the group name.  
+The tabs will be opened in your default browser.  
+
+The available commands are:  
 
 ## Remove tabs
 
