@@ -5,7 +5,8 @@ on:
   push: 
     branches: 
     - 'main'
-    - '!docs'
+    paths-ignore:
+    - "*.md"
       
 jobs:
   deploy:
