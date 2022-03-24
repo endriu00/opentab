@@ -17,6 +17,11 @@ so that you can relax and read or work on them later.
 
 # Index
 
+- [Getting Started](#getting-started-the-fast-way)
+  - [Installation](#installation)
+  - [Initialize opentab](#initialize-opentab)
+  - [Add a test group](#add-a-group-with-some-urls)
+  - [Open the test group](#open-a-group-of-tabs)
 - [Why opentab](#why-opentab)
 - [Features](#features)
   - [Add tabs](#add-tabs)
@@ -29,6 +34,50 @@ so that you can relax and read or work on them later.
   - [tabs.yaml](#tabsyaml)
 - [Contribute](#contribute)
   - [Devel Environment](#devel-environment)
+
+
+# Getting started (The fast way)
+
+`opentab` lets you save browser tabs in groups that you can easily open them
+later. The only thing you need is your CLI!
+
+## Installation
+
+`opentab` can be easily installed using `pip`. Simply issue this command:
+```
+pip install opentab
+```
+And you are done! `opentab` is installed in your system.
+
+> Please note that `opentab` is written in `Python`, and it downloads some
+> depencencies with it. We do not suggest you to use a virtual environment for
+> using `opentab`. Instead, consider using a virtual environment for your other
+> projects if you don't do it.
+
+## Initialize opentab
+
+To initialize `opentab`, simply use this command:
+```
+opentab init
+```
+This initializes `opentab`'s workspace.
+After this step, `opentab` is ready to be used. The following content is for 
+explanatory purpose only. For a full list of available commands, refer to
+[commands](#features).
+
+## Add a group with some URLs
+
+This operation is incredibly easy.
+```
+opentab add test_group "https://github.com/endriu00/opentab" "https://github.com/endriu00/opentab/issues"
+```
+
+## Open a group of tabs
+
+```
+opentab open test_group
+```
+`opentab` will open the URLs in your default browser. Simple, isn't it?
 
 
 # Why `opentab`
