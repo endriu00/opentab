@@ -74,6 +74,12 @@ opentab add test_group "https://github.com/endriu00/opentab" "https://github.com
 
 ## Open a group of tabs
 
+```
+opentab open test_group
+```
+And this will open the group `test_group` in your default browser!
+
+
 # Why `opentab`
 
 Think of it like a tab organizer: most of the time, you need to open again 
